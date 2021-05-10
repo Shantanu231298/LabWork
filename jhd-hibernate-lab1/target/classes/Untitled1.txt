@@ -1,0 +1,10 @@
+CREATE TABLE author_lab1(
+authorId number(19) CONSTRAINT author_lab1_authorId_pk PRIMARY KEY,
+firstName varchar2(20) CONSTRAINT author_lab1_firstName_nn NOT NULL,
+middleName varchar2(20) ,
+lastName varchar2(20) CONSTRAINT author_lab1_lastName_nn NOT NULL,
+phoneNo varchar2(10) CONSTRAINT author_lab1_phoneNo_nn NOT NULL
+);
+
+INSERT INTO author_lab1 (authorId,firstName,middleName,lastName,phoneNo)
+VALUES(1,"Shantanu","","Singh","7982199965");

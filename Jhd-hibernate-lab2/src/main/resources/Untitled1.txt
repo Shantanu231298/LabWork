@@ -1,0 +1,28 @@
+CREATE TABLE author_lab2(
+id number(19) CONSTRAINT author_lab2_id_pk PRIMARY KEY,
+name varchar2(20) CONSTRAINT author_lab2_name_nn NOT NULL
+);
+
+INSERT INTO author_lab2(id,name)
+VALUES(1,'Shantanu Singh');
+
+INSERT INTO author_lab2(id,name)
+VALUES(2,'Suraj Chaurasia');
+-----------------------------------------------------------------------
+
+CREATE TABLE books_lab2(
+isbn number(19) CONSTRAINT books_lab2_isbn_pk PRIMARY KEY,
+title varchar2(20) CONSTRAINT books_lab2_title_nn NOT NULL,
+price number(19) CONSTRAINT books_lab2_price_nn NOT NULL,
+id number(19) CONSTRAINT books_lab2_id_fk REFERENCES author_lab2(id)
+);
+
+INSERT INTO books_lab2(isbn,title,price,id)
+VALUES(1,'Vampire diaries',1000,1);
+
+INSERT INTO books_lab2(isbn,title,price,id)
+VALUES(2,'Originals',2000,1);
+
+INSERT INTO books_lab2(isbn,title,price,id)
+VALUES(3,'Legacy',1000,2);
+------------------------------------------------------------------------
